@@ -36,3 +36,11 @@ app.post("/login", AuthController.loginUser);
 
 const KeranjangController = require("./controllers/keranjangController");
 app.post("/insert-keranjang", KeranjangController.insertToKeranjang);
+
+// Mendapatkan data keranjang berdasarkan email
+app.get("/keranjang/:email", KeranjangController.getKeranjangByEmail);
+
+const ReservasiController = require("./controllers/ReservasiController");
+
+app.post("/reservasi", ReservasiController.createReservasi);
+app.get("/reservasi/:email", ReservasiController.getReservasiByEmail);
